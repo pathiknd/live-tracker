@@ -1,0 +1,10 @@
+<div style="background-color:aliceblue;padding: 5px">
+    <div>
+        <p>
+            Type search text and the items will be filtered on the right panel as you type in the box. Press ESC anytime to end search.
+        </p>
+    </div>    
+    <div>
+        <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="name" (keyup)="onKeyUp($event)" />
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="col-sm-6" #trackerComponent>
+    <div class="panel" [ngClass]="{'panel-primary': data.trackerState == 'default','panel-success': data.trackerState=='up','panel-danger': data.trackerState=='down'}">
+        <div class="panel-heading clearfix">            
+            <div class="btn-toolbar pull-right">               
+                <a href="#" class="btn btn-default btn-sm" (click)="toggleUpdates()" >
+                    <div *ngIf ="!data.pauseUpdates"> 
+                        <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
+                    </div>
+                    <div *ngIf="data.pauseUpdates"> 
+                        <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                    </div>
+                </a>                
+                <a href="#" class="btn btn-default btn-sm" (click)="sendRemoveItem()" >
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </a>                                                
+            </div>
+            <h5 class="panel-title pull-left">{{data.trackedTopic}}</h5>
+        </div>
+        <div class="panel-body" #trackerBody>
+            <div *ngIf="!showDetails" >
+                <h2>{{data.value1}}</h2>
+            </div>
+            <div *ngIf="data.label1 != '' && data.label1 != null && showDetails">
+                <b>{{data.label1}}</b> {{data.value1}}
+            </div>            
+            <div *ngIf="data.label2 != '' && data.label2 != null && showDetails">
+                <b>{{data.label2}}</b>: {{data.value2}}
+            </div> 
+            <div *ngIf="data.label3 != '' && data.label3 != null && showDetails">
+                <b>{{data.label3}}</b>: {{data.value3}}
+            </div>            
+            <div *ngIf="data.label4 != '' && data.label4 != null && showDetails">
+                <b>{{data.label4}}</b>: {{data.value4}}
+            </div>
+            <div>
+        </div>
+    </div>    
+</div>

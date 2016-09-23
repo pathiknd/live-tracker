@@ -1,0 +1,27 @@
+<div class="container">
+  <h2 style="font-style: oblique;color: darkgrey;">Demo SPA with Angular2, TypeScript and RxJS</h2>
+  <div class="row">
+    <div class="col-sm-3 col-md-3 col-lg-3">
+      <add-tracker (addItem)="onAddItem($event)">Loading...</add-tracker>
+      <br>
+      <search-tracker (searchItem)="onSearchItem($event)" (endSearch)="onEndSearch($term)">Loading...</search-tracker>
+      <br>
+      <div style="background-color:aliceblue;padding: 5px">
+        <b>What is this page doing?</b>
+        <br><br>
+        <p style="color: darkgrey;">
+          For any tickers you add, its data is pulled from Google Finance every 5 seconds and updated in the ticker box - deplay is longer to avoid getting blocked by Google for violation of service usage.
+          <br><br>
+          Highlight view only shows current price. Double click on any box body (white portion) to toggle detailed view.          
+          <br><br>
+          The color of the box indicates whether the ticker is up or down. The color will change based on the change in prices.
+          <br><br>
+          Pause and Remove buttons will pause updates or remove ticker from tracking respectively.
+        <p>
+      </div>      
+    </div>
+    <div class="col-sm-9 col-ms-9 col-lg-9">
+      <tracker-list (removeItem)="onRemoveItem($event)" [items]="displayItems">Loading...</tracker-list>
+    </div>
+  </div>
+</div>

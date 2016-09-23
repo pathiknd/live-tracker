@@ -1,0 +1,22 @@
+    <div style="background-color:aliceblue;padding: 5px">
+        <div>
+            <p>
+                Add a valid ticker symbol for Google Finance. Examples: <br>
+                <span style="font-style: oblique;color: darkgrey;">            
+                Barclays - LON:BARC<br>
+                Facebook - NASDAQ:FB<br>
+                Intel - NASDAQ:INTC<br>
+                Microsoft - NASDAQ:MSFT<br>
+                </span>
+            </p>
+        </div>
+        <div>
+            <input type="text" class="form-control" placeholder="Add..." [(ngModel)]="name" />
+        </div>
+        <p></p>
+        <div>
+            <input type="button" class="btn btn-primary btn-md" value="Add" (click)="sendAddItem()" />
+        </div>
+        <p></p>        
+    </div>
+
