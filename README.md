@@ -154,7 +154,7 @@ code and the page will be refreshed in the browser.
 ```
 [angular-cli](https://github.com/angular/angular-cli) is still in beta phase but I haven't faced any issue using it. It makes the whole development experience very smooth and lets you focus core job.
 
-# What I liked
+# Positives
 
 * Thanks to TypeScript, being able to write "OO" code for Javascript was great. I used generics, interfaces, etc. It lets you organize your code in very structured way - the way you normally see in OO languages like C#, Java, etc. I was able to implement standard OO patters like Observer and Command in TypeScript.
 
@@ -164,4 +164,4 @@ code and the page will be refreshed in the browser.
 
 * I do not have experience with Angular 1.x so I can't comment how Angular 2 is different. But Angular 2 app looks very organized and managable - provided you break it down in to smaller components and keep them separate as Angular 2 recommends. It was very easy to write smaller components and then compose them in a root component on the page. 
 
- * Rx is very powerful. It is a bit difficult to start but once you get used to thinking in terms of streams and operators, it makes lot of problems a lot easier to solve. There are good rsources [here](https://github.com/Reactive-Extensions/RxJS) and [here](http://reactivex.io/)
+* Rx is very powerful. Initially it is  difficult to start but once you get used to thinking in terms of streams and operators, it makes lot of problems a lot easier to solve. There are good rsources [here](https://github.com/Reactive-Extensions/RxJS) and [here](http://reactivex.io/)
