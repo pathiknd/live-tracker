@@ -9,9 +9,11 @@ App design:
 ![App Design](/images/live-tracker-design.png)
 
 
-# RxJS Usage
+# [RxJS](https://github.com/Reactive-Extensions/RxJS) Usage
 
-Following code snippet shows the search functionality carried out as user types using Rx.
+See http://reactivex.io/ for information on Reactive Extensions (Rx).
+
+Following code snippet is for the search performed as user types.
 
 ```javascript
 //this is called by Angular. We put this on our keyUp event stream and return.    
@@ -131,7 +133,9 @@ this.responseStream = Rx.Observable.interval(this.refreshRate)
 npm install --save @types\node
 ```
 
-* Bundling Angular 2 app with Webpack was running in to issues at runtime. I followed the steps given on Angular 2 website but it dind't work for me. However, the good news is that angular-cli takes care of all that now. It lets you create project scaffolding, build and bundle with Webpack and keep webpack-dev-server running while you develop.
+Most important packages on npm are now coming along with TypeScript definition files so this should not be a problem going forward.
+
+* Bundling Angular 2 app with Webpack was running in to issues at runtime. I followed the steps given on Angular 2 website but it dind't work for me. However, the good news is that [angular-cli](https://github.com/angular/angular-cli) takes care of all that now. It lets you create project scaffolding, build and bundle with Webpack and keep webpack-dev-server running while you develop.
 
 ```
 This will create scaffolding.
@@ -142,20 +146,22 @@ Now go to the directory and build
 
 >ng build
 
-And start the server so that you can launch your app in browser. The server will automatically re-build when you change your source code and the page will be refreshed in the browser.
+And start the server so that you can launch your app in browser. 
+The server will automatically re-build when you change your source 
+code and the page will be refreshed in the browser.
 
 >ng serve
 ```
-angular-cli is still in beta phase but I haven't faced any issue using it. It makes the whole development experience very smooth and lets you focus core job.
+[angular-cli](https://github.com/angular/angular-cli) is still in beta phase but I haven't faced any issue using it. It makes the whole development experience very smooth and lets you focus core job.
 
 # What I liked
 
-* Thanks to TypeScript, being able to write "OO" code for Javascript was great. I used generics, interfaces, etc. It lets you organize your code in very structured way - the way you normally see in OO languages like C#, Java, etc. I was able to implement some patters like Observer and Command in TypeScript.
+* Thanks to TypeScript, being able to write "OO" code for Javascript was great. I used generics, interfaces, etc. It lets you organize your code in very structured way - the way you normally see in OO languages like C#, Java, etc. I was able to implement standard OO patters like Observer and Command in TypeScript.
 
-* Rx is very powerful. It is a bit difficult to start but once you get used to thinking in terms of streams and operators, it makes lot of problems a lot easier to solve.
+* [angular-cli](https://github.com/angular/angular-cli): it makes the app development a lot easier. There are number of components you have to bring togather to make it work like TypeScript compiler, webpack, typings, webpack-dev-server, etc. angular-cli lets you use all that with simple commands.
 
-* angular-cli: it makes the app development a lot easier. There are number of components you have to bring togather to make it work like TypeScript compiler, webpack, typings, webpack-dev-server, etc. angular-cli lets you use all that with simple commands.
+* Google Chrome lets you debug Typescript code so combination of webpack-dev-server and Chrome makes it easy to debug code during development.
 
-* Chrome lets you debug Typescript code so combination of webpack-dev-server and Chrome makes it easy to debug code during development.
+* I do not have experience with Angular 1.x so I can't comment how Angular 2 is different. But Angular 2 app looks very organized and managable - provided you break it down in to smaller components and keep them separate as Angular 2 recommends. It was very easy to write smaller components and then compose them in a root component on the page. 
 
-* I do not have experience with Angular 1.x so I can't comment how Angular 2 is different. But Angular 2 app looks very organized and managable - provided you break it down to smaller components and keep them separate as Angular 2 recommends. It was very easy to write smaller components and then compose them in a root component on the page. 
+ * Rx is very powerful. It is a bit difficult to start but once you get used to thinking in terms of streams and operators, it makes lot of problems a lot easier to solve. There are good rsources [here](https://github.com/Reactive-Extensions/RxJS) and [here](http://reactivex.io/)
