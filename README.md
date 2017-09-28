@@ -2,6 +2,8 @@ This is a demo SPA using Angular2, TypeScript and RxJS. It shows real time curre
 
 App is available via Github Pages at https://pathiknd.github.io/live-tracker/
 
+**Google has removed Google Finance REST APIs so the demo now uses a dummy data provider that randomly returns values to mimic a market data API behavior.**
+
 # Design
 
 Page is composed of a group of angular components.
