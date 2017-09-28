@@ -31,7 +31,7 @@ export class TrackerComponent implements AfterViewInit{
         //2. calculate number of events (clicks) from buffer
         //3. publish if it is double click.
         this.clickStream = this.eventStream.bufferWhen(() => this.eventStream.auditTime(250))
-                    .map<number>((value: any[], index: number) => { 
+                    .map<any,number>((value: any[], index: number) => { 
                         return value.length;
                     })
                     .filter((value: number, index: number) => {

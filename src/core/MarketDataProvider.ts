@@ -39,9 +39,10 @@ export class MarketDataProvider implements IRTDServer<SymbolData> {
         //3. Map to JSON (optional)
         //4. Transform to our model - SymbolData
         //5. Convert collection of SymbolData[] in to a series of items on output streaming
-        //6. notify clients for each update.        
-        this.responseStream = Rx.Observable.interval(this.refreshRate)
-            .flatMap<string>((value: number) => {
+        //6. notify clients for each update.       
+        let firstStream: Rx.Observable<number> = Rx.Observable.interval(this.refreshRate); 
+        
+        this.responseStream = firstStream.mergeMap<number, string>((value: number, index: number) => {
                     return Rx.Observable.fromPromise(new Promise(
                             (resolve: (val? : string) => void, reject: (resoan? :any) => void) => {
                                 this.dataSource.pullUpdates(this.symbols, (error: any, body: any, response: string) => {
@@ -49,11 +50,12 @@ export class MarketDataProvider implements IRTDServer<SymbolData> {
                                 });
                             }));
             })
-            .map<Object>((body: any) => {
+            .map<string, Object>((body: any) => {
                 //return JSON.parse(body);
-                return body;
+                return JSON.parse(body);
+                //return body;
             })
-            .map<SymbolData[]>((responseObjs: JSON) => {
+            .map<Object, SymbolData[]>((responseObjs: JSON) => {
                 let objs: SymbolData[] = [];
                 for(var i in responseObjs){
                     let data: SymbolData = new SymbolData();
@@ -61,13 +63,13 @@ export class MarketDataProvider implements IRTDServer<SymbolData> {
                     data.symbol = resData["t"];                       
                     data.lastTradePrice = resData["l"];
                     data.lastTradeTime = resData["lt_dts"];
-                    data.changePercent = resData["cp"];
                     data.exchange = resData["e"];
+                    data.changePercent = resData["cp"];
                     objs.push(data);
                 }
                 return objs;                
             })
-            .flatMap<SymbolData>((updates: SymbolData[]) => {
+            .flatMap<SymbolData[],SymbolData>((updates: SymbolData[]) => {
                 return updates;
             });
 

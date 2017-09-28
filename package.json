@@ -5,7 +5,7 @@
   "angular-cli": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/pathiknd/live-tracker.git" 
+    "url": "https://github.com/pathiknd/live-tracker.git"
   },
   "scripts": {
     "start": "ng serve",
@@ -16,28 +16,31 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "2.0.0",
-    "@angular/compiler": "2.0.0",
-    "@angular/core": "2.0.0",
-    "@angular/forms": "2.0.0",
-    "@angular/http": "2.0.0",
-    "@angular/platform-browser": "2.0.0",
-    "@angular/platform-browser-dynamic": "2.0.0",
-    "@angular/router": "3.0.0",
+    "@angular/animations": "^4.2.4",
+    "@angular/common": "^4.2.4",
+    "@angular/compiler": "^4.2.4",
+    "@angular/core": "^4.2.4",
+    "@angular/forms": "^4.2.4",
+    "@angular/http": "^4.2.4",
+    "@angular/platform-browser": "^4.2.4",
+    "@angular/platform-browser-dynamic": "^4.2.4",
+    "@angular/router": "^4.2.4",
     "@types/node": "^6.0.38",
     "core-js": "^2.4.1",
     "es6-promise": "^3.3.1",
     "request": "^2.75.0",
-    "rxjs": "^5.0.0-beta.12",
+    "rxjs": "~5.0.0",
     "ts-helpers": "^1.1.1",
+    "zone": "^0.3.4",
     "zone.js": "^0.6.23"
   },
   "devDependencies": {
+    "@angular/cli": "^1.4.3",
+    "@angular/compiler-cli": "^4.4.3",
     "@types/jasmine": "^2.2.30",
-    "angular-cli": "1.0.0-beta.14",
     "codelyzer": "~0.0.26",
-    "jasmine-core": "2.4.1",
-    "jasmine-spec-reporter": "2.5.0",
+    "jasmine-core": "~2.6.2",
+    "jasmine-spec-reporter": "~4.1.0",
     "karma": "1.2.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-cli": "^1.0.1",
@@ -46,6 +49,6 @@
     "protractor": "4.0.5",
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
-    "typescript": "2.0.2"
+    "typescript": "~2.1.1"
   }
 }
